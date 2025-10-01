@@ -1,0 +1,6 @@
+[
+  { "id": 1, "name": "Ana", "specialty": "Pediatría" },
+  { "id": 2, "name": "Luis", "specialty": "Urgencias" },
+  { "id": 3, "name": "Maria", "specialty": "Geriatría" },
+  { "id": 4, "name": "Carlos", "specialty": "Cirugía" }
+]
