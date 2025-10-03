@@ -1,6 +1,19 @@
 [
-  { "id": 1, "name": "Ana", "specialty": "Pediatría" },
-  { "id": 2, "name": "Luis", "specialty": "Urgencias" },
-  { "id": 3, "name": "Maria", "specialty": "Geriatría" },
-  { "id": 4, "name": "Carlos", "specialty": "Cirugía" }
+{
+  "id": 1, "username": "Raymond", 
+  "password": "2006"
+},
+{
+   "id": 2, "username": "Biel", 
+  "password": "2006" 
+},
+{ 
+    "id": 3, "username": "Diego", 
+  "password": "1996" 
+},
+  
+{
+   "id": 4, "username": "Maxime", 
+  "password": "2005"
+ }
 ]
