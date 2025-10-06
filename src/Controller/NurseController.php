@@ -5,7 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Attribute\Route;
-
+use Symfony\Component\HttpFoundation\Response;
 #[Route('/nurse')]
 final class NurseController extends AbstractController
 {
@@ -36,6 +36,6 @@ final class NurseController extends AbstractController
             }
         }
 
-        return $this->json(['error' => 'Nurse not found'], 404);
+        return $this->json(['error' => 'Nurse not found'], Response::HTTP_FOUND);
     }
 }
