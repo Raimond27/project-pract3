@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\HttpFoundation\Response;
+
 #[Route('/nurse')]
 final class NurseController extends AbstractController
 {
@@ -22,8 +23,6 @@ final class NurseController extends AbstractController
         return $data ?? [];
     }
 
-
-
     //  Ruta para buscar por nombre
     #[Route('/name/{name}', name: 'nurse_find_by_name', methods: ['GET'])]
     public function findByName(string $name): JsonResponse
@@ -31,7 +30,8 @@ final class NurseController extends AbstractController
         $nurses = $this->loadNurses();
 
         foreach ($nurses as $nurse) {
-            if (strcasecmp($nurse['name'], $name) === 0) {
+            // ¡CAMBIO AQUÍ! Usar 'username' en lugar de 'name'
+            if (strcasecmp($nurse['username'], $name) === 0) {
                 return $this->json($nurse);
             }
         }
