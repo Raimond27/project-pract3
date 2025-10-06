@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Attribute\Route;
 
+#[Route('/nurse')]
 final class NurseController extends AbstractController
 {
     private function loadNurses(): array
@@ -21,21 +22,10 @@ final class NurseController extends AbstractController
         return $data ?? [];
     }
 
-    //  Ruta para obtener TODOS los enfermeros
-    #[Route('/nurses', name: 'nurse_list', methods: ['GET'])]
-    public function list(): JsonResponse
-    {
-        $nurses = $this->loadNurses();
 
-        if (empty($nurses)) {
-            return $this->json(['error' => 'No nurses found'], 404);
-        }
-
-        return $this->json($nurses);
-    }
 
     //  Ruta para buscar por nombre
-    #[Route('/nurse/find/{name}', name: 'nurse_find_by_name', methods: ['GET'])]
+    #[Route('/name/{name}', name: 'nurse_find_by_name', methods: ['GET'])]
     public function findByName(string $name): JsonResponse
     {
         $nurses = $this->loadNurses();
