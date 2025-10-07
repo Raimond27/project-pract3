@@ -30,8 +30,8 @@ final class NurseController extends AbstractController
         $nurses = $this->loadNurses();
 
         foreach ($nurses as $nurse) {
-            // ¡CAMBIO AQUÍ! Usar 'username' en lugar de 'name'
-            if (strcasecmp($nurse['username'], $name) === 0) {
+            // ¡CAMBIO AQUÍ! Usar 'user' en lugar de 'name'
+            if (strcasecmp($nurse['user'], $name) === 0) {
                 return $this->json($nurse);
             }
         }
